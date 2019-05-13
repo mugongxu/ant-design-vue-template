@@ -8,7 +8,7 @@ import page1 from './page1';
 import page2 from './page2';
 import page3 from './page3';
 
-Vue.use(Router);
+if (!window.VueRouter) Vue.use(Router);
 
 const MainContainer = () => import ('#/mainContainer');
 const insertRootCompHelper = (routerConf) => {

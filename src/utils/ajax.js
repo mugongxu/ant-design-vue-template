@@ -23,6 +23,12 @@ ajax.interceptors.request.use((config) => {
     newConf.headers['Content-Type'] = 'application/json';
   }
   delete newConf.contentType;
+  // 兼容IE处理（IE缓存坑）
+  if (newConf.method.toLowerCase() === 'get') {
+      newConf.params = Object.assign({}, (newConf.params || {}), {
+          _: new Date().getTime()
+      });
+  }
   // headers加参数
   let SESSIONID = window.localStorage.getItem('SESSIONID');
   newConf.headers.common['x-access-token'] = SESSIONID;

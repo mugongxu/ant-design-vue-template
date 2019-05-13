@@ -1,5 +1,12 @@
 <template>
-  <div class="page-wrapper">主体内容1</div>
+  <div class="page-wrapper">
+    <div>
+      <a-button class="primary-btn" type="primary">Primary</a-button>
+      <a-button>Default</a-button>
+      <a-button type="dashed">Dashed</a-button>
+      <a-button type="danger">Danger</a-button>
+    </div>
+  </div>
 </template>
 
 <script>

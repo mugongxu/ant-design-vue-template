@@ -21,7 +21,7 @@ const filter = {
       let right = tempArr[1];
       right = right ? '.' + right.substring(0, 2) : '';
       let temp = left.split('').reverse().join('').match(/(\d{1,3})/g);
-      return (Number(value) < 0 ? '-' : '') + temp.join(',').split('').reverse().join('') + right;
+      return (Number(value) < 0 ? '-' : '') + temp.join(format).split('').reverse().join('') + right;
     } else if (value === 0) {
       return '0';
     } else {

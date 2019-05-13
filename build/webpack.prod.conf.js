@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const WebpackCdnPlugin = require('webpack-cdn-plugin')
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -77,6 +78,23 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
+    }),
+    // 引入cdn配置
+    new WebpackCdnPlugin({
+      modules: [
+        {
+          name: 'vue',
+          var: 'Vue',
+          path: 'dist/vue.runtime.min.js'
+        },
+        {
+          name: 'vue-router',
+          var: 'VueRouter',
+          path: 'dist/vue-router.min.js'
+        }
+      ],
+      prod: true,
+      publicPath: '/node_modules'
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
