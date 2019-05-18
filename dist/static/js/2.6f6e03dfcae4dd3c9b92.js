@@ -1,0 +1,2 @@
+webpackJsonp([2],{pBgG:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("div",{staticClass:"page-wrapper"},[this._v("主体内容3")])},staticRenderFns:[]},s=n("C7Lr")({data:function(){return{}}},r,!1,null,null,null);t.default=s.exports}});
+//# sourceMappingURL=2.6f6e03dfcae4dd3c9b92.js.map
