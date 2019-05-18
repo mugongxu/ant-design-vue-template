@@ -80,22 +80,22 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunksSortMode: 'dependency'
     }),
     // 引入cdn配置
-    new WebpackCdnPlugin({
-      modules: [
-        {
-          name: 'vue',
-          var: 'Vue',
-          path: 'dist/vue.runtime.min.js'
-        },
-        {
-          name: 'vue-router',
-          var: 'VueRouter',
-          path: 'dist/vue-router.min.js'
-        }
-      ],
-      prod: true,
-      publicPath: '/node_modules'
-    }),
+    // new WebpackCdnPlugin({
+    //   modules: [
+    //     {
+    //       name: 'vue',
+    //       var: 'Vue',
+    //       path: 'dist/vue.runtime.min.js'
+    //     },
+    //     {
+    //       name: 'vue-router',
+    //       var: 'VueRouter',
+    //       path: 'dist/vue-router.min.js'
+    //     }
+    //   ],
+    //   prod: true,
+    //   publicPath: '/node_modules'
+    // }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
